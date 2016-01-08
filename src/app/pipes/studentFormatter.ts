@@ -1,9 +1,11 @@
-import { Pipe } from 'angular2/angular2';
-// ?code? //
+import { Pipe } from 'angular2/core';
+import { student } from './models/student';
 
 @Pipe({
-	// ?code? //
+	name:'studentFormatter'
 })
 export class StudentFormatter {
-	 // ?code? //
+	 transform(value:student, args:string[]) : any {
+    	return "<b>Naam: " + value.firstname + " " + value.lastname + "</b><br/>School: " + value.school; 
+	 }
 }
