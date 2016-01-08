@@ -22,25 +22,30 @@ import {student, studenttrack} from './models/student';
 export class SurveyApplication {	
 	// ADD FIELD FOR THE STUDENTTRACK
 	// your code here...
-	
+	studenttrack:studenttrack;
 	
 	constructor (){
 		// ADD CODE HERE TO INSTANTIATE A NEW STUDENTTRACK
 		// AND ADD SOME STUDENTS TO THE STUDENTTRACK
 		// your code here...
+	    this.studenttrack = new studenttrack('Angular2');
+		this.studenttrack.addStudentToTrack(new student('John', 'Gorter', 'HAN'));
+	    this.studenttrack.addStudentToTrack(new student('Harold', 'Gorter', 'HAN'));
+	    this.studenttrack.addStudentToTrack(new student('Niels', 'Gorter', 'HAN'));	
+
 	   
 	   // REPLACE THIS ANONYMOUS FUNCTION WITH A PHAT ARROW ONE
-	   window.setInterval(function() {
+	   window.setInterval(() => {
 		   // RANDOMLY ADD NEW ATTENDEES TO THE STUDENTTRACK
 		   // your code here...
-		 	
+		   this.studenttrack.addStudentToTrack(new student('Another', 'Gorter', 'HAN'));	
 	   }, 2000);
 	}
 	
 	getCount(){
 		// ADD CODE THAT RETURNS THE NUMBER OF STUDENTS FROM THE STUDENTTRACK
 		// your code here...
-
+		return this.studenttrack.getStudents().length;
 	}
 }
 
