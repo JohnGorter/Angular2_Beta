@@ -1,4 +1,4 @@
-System.register(['angular2/core', '../pipes/studentFormatter', '../services/studentservice'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', '../pipes/studentFormatter', '../services/studentservice'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
         switch (arguments.length) {
@@ -10,12 +10,15 @@ System.register(['angular2/core', '../pipes/studentFormatter', '../services/stud
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, studentFormatter_1, studentservice_1;
+    var core_1, router_1, studentFormatter_1, studentservice_1;
     var StudentCard;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
             },
             function (studentFormatter_1_1) {
                 studentFormatter_1 = studentFormatter_1_1;
@@ -25,12 +28,8 @@ System.register(['angular2/core', '../pipes/studentFormatter', '../services/stud
             }],
         execute: function() {
             StudentCard = (function () {
-                function StudentCard(studentservice, your, here) {
-                    if (your === void 0) { your = paraminjector; }
-                    your;
-                    studentretrieval;
-                    here..
-                    ;
+                function StudentCard(studentservice, routeParams) {
+                    this.student = studentservice.getStudentById(routeParams.params.id);
                 }
                 StudentCard = __decorate([
                     core_1.Component({
@@ -40,9 +39,10 @@ System.register(['angular2/core', '../pipes/studentFormatter', '../services/stud
                         template: "\n\t<div class=\"dialog light-primary-color text-primary-color\"><div [ngClass]=\"{defaultPrimaryColor:true}\"> \n\t{{ student.firstname }} {{ student.lastname }}</div>\n\t<p> Address: {{ student.address }} <br/> Phone: {{ student.phone }} </p></div>\n\t",
                         styles: ["\n\t.dialog { border:1px solid black;};\n\t.header { margin-top:0px;}\n\t"]
                     }), 
-                    __metadata('design:paramtypes', [studentservice_1.StudentService, Object, Object])
+                    __metadata('design:paramtypes', [studentservice_1.StudentService, (typeof (_a = typeof router_1.RouteParams !== 'undefined' && router_1.RouteParams) === 'function' && _a) || Object])
                 ], StudentCard);
                 return StudentCard;
+                var _a;
             })();
             exports_1("StudentCard", StudentCard);
         }

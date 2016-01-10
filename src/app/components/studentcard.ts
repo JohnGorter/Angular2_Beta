@@ -22,7 +22,8 @@ import { StudentService } from '../services/studentservice';
 export class StudentCard
 {
 	student:student;
-	constructor(studentservice:StudentService, .. your paraminjector here ..){
-		.. your studentretrieval here ..
+	constructor(studentservice:StudentService, routeParams:RouteParams){
+		this.student = studentservice.getStudentById(routeParams.params.id); 
+		
 	}
 }	
