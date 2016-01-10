@@ -26,6 +26,18 @@ export class StudentTrackService {
 	
 	getStudentTracks() : studenttrack[] {
 		return this.studentTracks;
+		
 	}
 	
+	getStudentTrackByName(trackname:string):studenttrack {
+		for (var st in this.studentTracks)
+		  if(this.studentTracks[st].name == trackname)
+		    return this.studentTracks[st];
+		return undefined;
+	}
+	
+	addStudentTrack(trackname:string){
+		this.studentTracks.push(new studenttrack(trackname));
+	}
+
 }

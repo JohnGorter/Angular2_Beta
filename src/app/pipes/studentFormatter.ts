@@ -6,6 +6,6 @@ import { student } from './models/student';
 })
 export class StudentFormatter {
 	 transform(value:student, args:string[]) : any {
-    	return "<b>Naam: " + value.firstname + " " + value.lastname + "</b><br/>School: " + value.school; 
+    	return "<b>Naam: " + value.firstname + "</b> " + value.lastname + " School: " + value.school; 
 	 }
 }

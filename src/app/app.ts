@@ -1,25 +1,28 @@
 import { Component } from 'angular2/core';
-import { bootstrap } from 'angular2/platform/browser';
-import { StudentDetails } from './components/studentdetails';
-import { student, studenttrack } from './models/student';
+import { bootstrap } from 'angular2/platform/browser'
+import { StudentDetails} from './components/studentdetails';
+import { student, studenttrack} from './models/student';
 import { StudentService } from './services/studentservice';
 import { StudentTrackService } from './services/studenttrackservice';
-
+import { DemoFormSku } from './form';
 
 // create a class with annotations..
 @Component({
 	selector: 'studenttrack-survey',
-	directives:[StudentDetails],
+	directives:[StudentDetails, DemoFormSku],
 	providers:[StudentService, StudentTrackService],
 	template: `
+	<demo-form-sku></demo-form-sku>
 	<div *ngFor="#studenttrack of studenttracks.getStudentTracks()" class="studenttrack light-primary-color text-primary-color">
 	   <h1 class="dark-primary-color text-primary-color">Studenttrack {{studenttrack.name}} (<span [textContent]="getCount(studenttrack)"></span> attendees)</h1>
 		<studentdetails 
 			[student]="student" 
 			[isselected]="currentstudent === student && currenttrack === studenttrack"
 			*ngFor="#student of studenttrack.getStudents()" 
+			(deleted)="removeStudent(studenttrack, student)"
 			(selected)="setSelected(studenttrack, student)"> 
 		</studentdetails>
+		
 	 </div>
 	`,
 	styles:[`
@@ -35,6 +38,10 @@ class SurveyApplication {
 	
 	constructor (studenttracks: StudentTrackService){
 	  this.studenttracks = studenttracks;
+	}
+
+    removeStudent(track, student){
+		track.removeStudent(student);
 	}
 
 	setSelected(studenttrack:studenttrack, student:student){
