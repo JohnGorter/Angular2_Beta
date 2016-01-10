@@ -1,6 +1,6 @@
 // YOUR IMPORTS HERE...
-import { Component, EventEmitter } from 'angular2/core';
-import { student } from '../models/student';
+import {Component, EventEmitter} from 'angular2/core';
+import {student} from '../models/student';
 import { StudentFormatter } from '../pipes/studentFormatter';
 
 
@@ -11,7 +11,7 @@ import { StudentFormatter } from '../pipes/studentFormatter';
 	outputs:['selected', 'deleted'],
 	pipes:[StudentFormatter],
 	template:`
-	<div><span (click)="setSelected()" [ngClass]="{defaultPrimaryColor:isselected, student:true}" [innerHTML] ="student |  studentFormatter">
+	<div><span style="padding:1px;" (click)="setSelected()" [ngClass]="{defaultPrimaryColor:isselected, student:true}" [innerHTML] ="student |  studentFormatter">
 	</span><button (click)="onDeleted()">remove</button></div>
 	`
 })

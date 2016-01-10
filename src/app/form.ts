@@ -1,12 +1,12 @@
 import {Component } from "angular2/core";  
 import { bootstrap } from 'angular2/platform/browser';
-import { FORM_DIRECTIVES } from "angular2/common";
+import {FORM_DIRECTIVES } from "angular2/common";
 import { StudentTrackService } from './services/studenttrackservice';
 import { StudentService } from './services/studentservice';
 import { StudentFormatter } from './pipes/studentformatter';
 
 @Component({  
-  selector: 'demo-form-sku',
+  selector: 'student-form',
   directives: [FORM_DIRECTIVES],  
   pipes:[StudentFormatter],
   template: `
@@ -43,7 +43,7 @@ import { StudentFormatter } from './pipes/studentformatter';
 	 .trackform h1 { margin:0px;padding:15px;}
 	`]
 })
-export class DemoFormSku {  
+export class StudentForm {  
       studenttrackservice: StudentTrackService;
       studentservice: StudentService;
            

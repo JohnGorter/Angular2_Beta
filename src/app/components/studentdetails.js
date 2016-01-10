@@ -39,7 +39,7 @@ System.register(['angular2/core', '../pipes/studentFormatter'], function(exports
                         inputs: ['student', 'isselected'],
                         outputs: ['selected', 'deleted'],
                         pipes: [studentFormatter_1.StudentFormatter],
-                        template: "\n\t<div><span (click)=\"setSelected()\" [ngClass]=\"{defaultPrimaryColor:isselected, student:true}\" [innerHTML] =\"student |  studentFormatter\">\n\t</span><button (click)=\"onDeleted()\">remove</button></div>\n\t"
+                        template: "\n\t<div><span style=\"padding:1px;\" (click)=\"setSelected()\" [ngClass]=\"{defaultPrimaryColor:isselected, student:true}\" [innerHTML] =\"student |  studentFormatter\">\n\t</span><button (click)=\"onDeleted()\">remove</button></div>\n\t"
                     }), 
                     __metadata('design:paramtypes', [])
                 ], StudentDetails);

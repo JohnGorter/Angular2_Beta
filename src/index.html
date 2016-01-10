@@ -4,8 +4,10 @@
     <script src="../node_modules/systemjs/dist/system.src.js"></script>
     <script src="../node_modules/rxjs/bundles/Rx.js"></script>
     <script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
-	<link rel="stylesheet" href="./palette.css"></link>
+    <script src="../node_modules/angular2/bundles/router.dev.js"></script>
 	
+	<link rel="stylesheet" href="./palette.css"></link>
+	<base href="/src/" />
 </head>
 <body>
 	<studenttrack-survey></studenttrack-survey>
@@ -14,7 +16,8 @@
 	System.config({
     packages: {'app': {defaultExtension: 'js'}}
   });
-  System.import('app/app');
+      System.import('app/app')
+            .then(null, console.error.bind(console));
 
 </script>
 </html>

@@ -2,7 +2,8 @@
 // expose firstname, lastname and school properties
 export class student{
 	// your code here...
-	constructor(public id:number, public firstname:string, public lastname:string, public school:string){}
+	constructor(public id:number, public firstname:string, public lastname:string, public school:string, public address:string, 
+	public phone:string, public age:number){}
 
 }
 

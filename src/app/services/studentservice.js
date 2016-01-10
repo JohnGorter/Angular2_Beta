@@ -10,10 +10,10 @@ System.register(['../models/student'], function(exports_1) {
             StudentService = (function () {
                 function StudentService() {
                     this.students = new Array();
-                    this.students.push(new student_1.student(1, 'John', 'Gorter', 'HAN'));
-                    this.students.push(new student_1.student(2, 'Harold', 'Gorter', 'HAN'));
-                    this.students.push(new student_1.student(3, 'Niels', 'Gorter', 'HAN'));
-                    this.students.push(new student_1.student(4, 'Other', 'Gorter', 'HAN'));
+                    this.students.push(new student_1.student(1, 'John', 'Gorter', 'HAN', 'street 34 5555 AA Amsterdam', '0612345678', 40));
+                    this.students.push(new student_1.student(2, 'Harold', 'Gorter', 'HAN', 'road 2 1235 RE Leeuwarden', '0674727283', 42));
+                    this.students.push(new student_1.student(3, 'Niels', 'Gorter', 'HAN', 'lane 4 3444 SX Den Haag', '0612345678', 15));
+                    this.students.push(new student_1.student(4, 'Other', 'Gorter', 'HAN', 'street 34 5555 AA Amsterdam', '0612345678', 40));
                 }
                 StudentService.prototype.getStudents = function () {
                     return this.students;

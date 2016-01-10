@@ -6,11 +6,14 @@ System.register([], function(exports_1) {
             // expose firstname, lastname and school properties
             student = (function () {
                 // your code here...
-                function student(id, firstname, lastname, school) {
+                function student(id, firstname, lastname, school, address, phone, age) {
                     this.id = id;
                     this.firstname = firstname;
                     this.lastname = lastname;
                     this.school = school;
+                    this.address = address;
+                    this.phone = phone;
+                    this.age = age;
                 }
                 return student;
             })();
