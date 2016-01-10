@@ -1,4 +1,4 @@
-import {Component } from 'angular2/core';
+import { Component } from 'angular2/core';
 import { bootstrap } from 'angular2/platform/browser';
 import { StudentDetails } from './components/studentdetails';
 import { student, studenttrack } from './models/student';
@@ -25,20 +25,11 @@ import { student, studenttrack } from './models/student';
 })
 class SurveyApplication {	
 	studenttrack:studenttrack;
-	message = new Date().toString();
 	currentstudent:student;
 	
 	constructor (){
-	   this.studenttrack = new studenttrack('Angular2');
-	   this.studenttrack.addStudentToTrack(new student('John', 'Gorter', 'HAN'));
-	   this.studenttrack.addStudentToTrack(new student('Harold', 'Gorter', 'HAN'));
-	   this.studenttrack.addStudentToTrack(new student('Niels', 'Gorter', 'HAN'));	
-
-	   window.setInterval(() => {
-		   this.studenttrack.addStudentToTrack(new student('Another', 'Gorter', 'HAN'));	
-		   this.message = new Date().toString(); 
-		   
-	   }, 2000);
+	  this.studenttrack = new studenttrack("Angular2");
+	  this.studenttrack.addStudentToTrack(new student (1, 'John', 'Gorter', 'HAN'));
 	}
 
 	setSelected(student:student){

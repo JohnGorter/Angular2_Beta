@@ -1,6 +1,6 @@
 // YOUR IMPORTS HERE...
-import {Component, EventEmitter} from 'angular2/core';
-import {student} from '../models/student';
+import { Component, EventEmitter } from 'angular2/core';
+import { student } from '../models/student';
 import { StudentFormatter } from '../pipes/studentFormatter';
 
 
